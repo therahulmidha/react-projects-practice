@@ -17,7 +17,7 @@ export const Tracks = () => {
               {/* bootstrap row with flex box classes */}
               <div className="row justify-content-around align-items-start">
                 {trackList.map((item, index) => {
-                  return <Track key={index} track={item.track}/>;
+                  return <Track key={item.track.track_id} track={item.track}/>;
                 })}
               </div>
             </>
