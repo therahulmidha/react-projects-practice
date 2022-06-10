@@ -21,7 +21,12 @@ export const LyricContextProvider = (props) => {
     getLyrics();
   }, []);
 
-  const lyricContextValue = { trackList, heading };
+  const setTracks = (newTrackList) => {
+    setHeading("Search Results: ")
+    setTrackList(newTrackList);
+  }
+
+  const lyricContextValue = { trackList, heading, setTracks };
   return (
     <LyricContext.Provider value={lyricContextValue}>
       {props.children}
