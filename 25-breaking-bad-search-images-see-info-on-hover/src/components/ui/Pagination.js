@@ -1,34 +1,41 @@
 import React from "react";
 
-export const Pagination = () => {
+export const Pagination = ({
+  totalPages,
+  currentPage,
+  setCurrentPage,
+  decCurrentPage,
+  incCurrentPage,
+}) => {
+  const setPage = (event) => {
+    setCurrentPage(+event.target.innerText);
+  };
   return (
-    <div className="center">
+    <div className="center mt-4">
       <nav aria-label="Page navigation example">
         <ul className="pagination">
           <li className="page-item">
-            <a className="page-link" href="#">
+            <span className="page-link" onClick={decCurrentPage}>
               Previous
-            </a>
+            </span>
           </li>
+
+          {new Array(totalPages).fill(0).map((page, index) => (
+            <li
+              key={index}
+              className={
+                currentPage === index + 1 ? "page-item active" : "page-item"
+              }
+            >
+              <span className="page-link" onClick={setPage}>
+                {index + 1}
+              </span>
+            </li>
+          ))}
           <li className="page-item">
-            <a className="page-link" href="#">
-              1
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">
-              2
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">
-              3
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">
+            <span className="page-link" onClick={incCurrentPage}>
               Next
-            </a>
+            </span>
           </li>
         </ul>
       </nav>

@@ -34,11 +34,11 @@ a {
 }
 
 header {
-  height: 200px;
+  height: 100px;
 }
 
 header img {
-  width: 200px;
+  width: 100px;
 }
 
 .center {
@@ -64,7 +64,7 @@ input[type="text"] {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
 }
 
