@@ -19,7 +19,8 @@ export const Jobs = ({ job }) => {
                         <Badge variant="primary" className='mr-2'>{job.type}</Badge>
                         {" "}<Badge variant="success">{job.location}</Badge>
                         <div style={{ wordBreak: "break-all" }}>
-                            <ReactMarkdown children={job.how_to_apply} />
+                            {/* <ReactMarkdown children={job.how_to_apply} /> */}
+                            <ReactMarkdown>This ~is not~ strikethrough, but ~~this is~~!</ReactMarkdown>
                         </div>
                     </div>
                     <img alt={job.company} src={companyLogo} className='d-none d-md-block' height="50" />
