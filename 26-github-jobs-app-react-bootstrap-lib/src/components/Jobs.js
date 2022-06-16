@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Badge, Button, Card, Collapse } from 'react-bootstrap';
 import ReactMarkdown from "react-markdown";
 import companyLogo from "../google.png";
+import rehypeRaw from "rehype-raw";
+
 export const Jobs = ({ job }) => {
     const [open, setOpen] = useState(false);
 
@@ -20,7 +22,7 @@ export const Jobs = ({ job }) => {
                         {" "}<Badge variant="success">{job.location}</Badge>
                         <div style={{ wordBreak: "break-all" }}>
                             {/* <ReactMarkdown children={job.how_to_apply} /> */}
-                            <ReactMarkdown>This ~is not~ strikethrough, but ~~this is~~!</ReactMarkdown>
+                            <a href="${job.how_to_apply}" target="_blank">{job.how_to_apply}</a>
                         </div>
                     </div>
                     <img alt={job.company} src={companyLogo} className='d-none d-md-block' height="50" />
@@ -32,7 +34,7 @@ export const Jobs = ({ job }) => {
                 </Card.Text>
                 <Collapse in={open}>
                     <div className='mt-4'>
-                        <ReactMarkdown children={job.description} />
+                        <ReactMarkdown children={`<strong>${job.description} </strong>`} rehypePlugins={[rehypeRaw]}/>
                     </div>
                 </Collapse>
             </Card.Body>
