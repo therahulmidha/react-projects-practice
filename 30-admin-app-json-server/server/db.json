@@ -1,0 +1,17 @@
+{
+  "posts": [
+    {
+      "title": "a",
+      "body": "a",
+      "publishedAt": "2022-06-30",
+      "id": 1
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "johndoe@example.com"
+    }
+  ]
+}
