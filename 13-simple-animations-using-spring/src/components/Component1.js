@@ -3,8 +3,8 @@ import { useSpring, animated } from 'react-spring';
 
 export const Component1 = () => {
     const mainAnimation = useSpring({
-        from: { opacity: 0, marginTop: -500 },
-        to: { opacity: 1, marginTop: 0 }
+        from: { opacity: 0, marginTop: -500, width: "20vw" },
+        to: { opacity: 1, marginTop: 0, width: "80vw" }
     });
 
     const counterAnimation = useSpring({

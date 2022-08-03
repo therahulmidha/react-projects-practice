@@ -1,0 +1,13 @@
+.player-search {
+  text-align: center;
+}
+
+.player-search input {
+  margin: 10vh;
+  width: 50%;
+  text-align: center;
+}
+
+.spinner {
+  text-align: center;
+}
